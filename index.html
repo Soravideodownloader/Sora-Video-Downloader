@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sora Video Downloader — No Watermark (Client‑side Demo)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>html{scroll-behavior:smooth}</style>
+</head>
+<body class="bg-white text-slate-800 antialiased">
+  <header class="sticky top-0 z-50 backdrop-blur bg-white/80 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <a href="#" class="flex items-center gap-2 font-semibold text-slate-900">
+        <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-blue-600 text-white">SV</span>
+        <span class="text-lg">Sora Video — No Watermark</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#features" class="hover:text-blue-700">Features</a>
+        <a href="#how" class="hover:text-blue-700">How it works</a>
+        <a href="#pricing" class="hover:text-blue-700">Pricing</a>
+        <a href="#faq" class="hover:text-blue-700">FAQ</a>
+        <a href="#contact" class="hover:text-blue-700">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 text-center">
+      <h1 class="text-4xl font-extrabold mb-4">Sora Video Downloader — No Watermark</h1>
+      <p class="text-slate-600 mb-8">Paste your video URL below to open the downloader page.</p>
+      <div class="max-w-xl mx-auto flex gap-2">
+        <input id="urlInput" type="url" placeholder="Paste video URL here" class="flex-1 border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600" />
+        <button id="searchBtn" class="bg-blue-600 text-white rounded-lg px-4 py-2 hover:bg-blue-700">Search</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-slate-200 bg-slate-50 py-6 text-center text-sm text-slate-600">
+    <p>© <span id="year"></span> Sora Video. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const searchBtn = document.getElementById('searchBtn');
+    const urlInput = document.getElementById('urlInput');
+
+    searchBtn.addEventListener('click', () => {
+      const url = urlInput.value.trim();
+      if (url) {
+        window.open('https://sorasave.site/sora-downloader/', '_blank');
+      } else {
+        alert('Please paste a valid URL first.');
+      }
+    });
+  </script>
+</body>
+</html>
